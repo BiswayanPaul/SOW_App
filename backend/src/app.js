@@ -17,5 +17,12 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 // Routes Import and Usage
+import authRoutes from "./routes/auth.route.js";
+
+app.use("/api/auth", authRoutes);
+
+app.get("/", (req, res) => {
+  res.send("API is running....");
+});
 
 export default app;
